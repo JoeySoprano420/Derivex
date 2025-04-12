@@ -1,0 +1,9 @@
+module core.thread
+
+function spawn(task:func) -> id
+    return scheduler.fork(task)
+end
+
+function sync(task:id)
+    scheduler.wait(task)
+end
