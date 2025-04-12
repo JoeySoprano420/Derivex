@@ -1,0 +1,1 @@
+macro.mutation.watch("THERMAL_LOG") => visualize.over.time()
