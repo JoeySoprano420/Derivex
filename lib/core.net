@@ -1,0 +1,17 @@
+module core.net
+
+function connect(host:string, port:u16) -> socket
+    return net.open(host, port)
+end
+
+function listen(port:u16, callback:func)
+    return net.bind(port, callback)
+end
+
+function send(sock:socket, data:string)
+    net.send(sock, data)
+end
+
+function recv(sock:socket) -> string
+    return net.recv(sock)
+end
