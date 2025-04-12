@@ -1,0 +1,5 @@
+postcompile.visualizer("thermal.handler") => {
+    pulse(trace.usage.intensity, color=0x4488FF)
+    grid.memory(stack.regs, highlight = volatile)
+    shader.overlay(usage.gradient, type = "decay_heat")
+}
