@@ -1,0 +1,10 @@
+event.on("REPL_CMD_EXEC") -> function(cmd:string)
+    compile_result := devrixelc.compile(cmd)
+    if compile_result.has("render")
+        call sync_to_render(compile_result.render)
+    end
+end
+
+function sync_to_render(render_func:func)
+    push gpu.pending_shaders <- render_func
+end
