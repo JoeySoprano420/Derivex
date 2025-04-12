@@ -1,0 +1,9 @@
+module core.crypto
+
+function encrypt(data:string, key:string) -> string
+    return crypto.aes256(data, key)
+end
+
+function decrypt(cipher:string, key:string) -> string
+    return crypto.aes256.decrypt(cipher, key)
+end
