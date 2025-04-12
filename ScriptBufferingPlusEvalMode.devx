@@ -1,0 +1,12 @@
+function eval_buffer(src:string)
+    tokens := lexer.tokenize(src)
+    ast := parser.build(tokens)
+    result := evaluator.run(ast)
+    return result
+end
+
+command "load" {
+    path := repl.input.next()
+    src := core.fs.read(path)
+    return eval_buffer(src)
+}
