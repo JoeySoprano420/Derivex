@@ -1,0 +1,1 @@
+glow_radiate.base_color := interpolate(mouse.x, 0x00FFFF, 0xFF0099)
