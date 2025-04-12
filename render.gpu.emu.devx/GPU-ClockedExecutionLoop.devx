@@ -1,0 +1,17 @@
+struct GPUState {
+    frame_id:u64
+    ticks:u64
+    vram:ref<framebuffer>
+    pending_shaders:queue<ShaderTask>
+}
+
+gpu := init.GPUState()
+loop forever
+    if gpu.pending_shaders.not_empty()
+        apply_shader(gpu.vram, gpu.pending_shaders.pop())
+    end
+    flush_buffer(gpu.vram)
+    gpu.frame_id += 1
+    gpu.ticks += 1
+    sleep(16ms)
+end
