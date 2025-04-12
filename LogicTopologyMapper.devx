@@ -1,0 +1,1 @@
+visual.topology(module = "thermal.core") :: activate.grid_map()
