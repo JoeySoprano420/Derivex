@@ -1,0 +1,14 @@
+template shader glow_radiate(
+    base_color: u32,
+    speed: float,
+    scale: float
+) {
+    input x: u32, y: u32, time: float
+    output color: u32
+
+    let fx := sin(x * scale + time * speed)
+    let fy := cos(y * scale + time * speed)
+    let mix := (fx + fy) * 0.5
+
+    color := blend(0x000000, base_color, mix)
+}
