@@ -1,0 +1,7 @@
+canvas := alloc<onchip> framebuffer[320][240]
+
+function clear(color:u32)
+    for x in 0..319
+        for y in 0..239
+            canvas[x][y] = color
+end
