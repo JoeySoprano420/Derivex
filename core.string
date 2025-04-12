@@ -1,0 +1,9 @@
+module core.string
+
+function len(input:string) -> u32
+    return system.strlen(input)
+end
+
+function concat(a:string, b:string) -> string
+    return system.strmerge(a, b)
+end
