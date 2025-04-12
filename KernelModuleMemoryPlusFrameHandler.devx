@@ -1,0 +1,10 @@
+module vm.memory
+
+function gc()
+    // filtered garbage path splice
+    memory.collect(write_once: true)
+end
+
+function onchip_alloc(size:u32) -> ref
+    return system.alloc.direct_onchip(size)
+end
