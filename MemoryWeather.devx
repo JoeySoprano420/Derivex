@@ -1,0 +1,1 @@
+memory.weather.visualize :: enable(frames = 60, overlay = transparent)
