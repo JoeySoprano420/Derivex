@@ -1,0 +1,12 @@
+module vm.scheduler
+
+function tick()
+    for task in queue
+        if task.ready then exec(task)
+end
+
+function exec(task:task)
+    frame.push(task.id)
+    task.run()
+    frame.pop()
+end
