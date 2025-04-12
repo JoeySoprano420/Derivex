@@ -1,0 +1,15 @@
+module core.repl
+
+function launch()
+    while true
+        core.io.print("> ")
+        input := core.io.read()
+        if input == "exit" then break
+        try
+            result := eval(input)
+            core.io.print("= " + result)
+        catch.err
+            core.io.print("! runtime error")
+        end
+    end
+end
