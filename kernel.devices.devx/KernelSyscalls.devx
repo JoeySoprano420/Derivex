@@ -1,0 +1,7 @@
+syscall["read.bus"] => function(addr:u16) {
+    return read_device(addr)
+}
+
+syscall["write.bus"] => function(addr:u16, value:u32) {
+    write_device(addr, value)
+}
