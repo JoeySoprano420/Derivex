@@ -1,0 +1,5 @@
+function check_type(expected:Type, actual:Type)
+    if expected != actual
+        throw "TypeMismatch: Expected " + expected.name + ", got " + actual.name
+    end
+end
