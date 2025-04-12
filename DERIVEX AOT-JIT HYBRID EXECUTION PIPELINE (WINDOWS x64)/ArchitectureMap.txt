@@ -1,0 +1,28 @@
+[Parser]
+   ↓
+[Semantic Analyzer]
+   ↓
+[Derivex IR Generator]
+   ↓
++-----------------------------+
+| AOT Compiler Engine        | ←→ Static Path Detection
+|  - CPU Map Generator       |
+|  - GPU Render Hooks        |
+|  - Register Finalizer      |
++-----------------------------+
+        ↓
+    [Linker (x64)]
+        ↓
+  [Binary Emission]
+        ↓
+[Execution Core (FrameStack)]
+        ↓
+      (Runtime)
+        ↓
+   +---------------------+
+   | Branch Monitor Core |
+   +---------------------+
+        ↓
+     [JIT Engine] ←→ ShaderEval, FrameScope, Live Macros
+        ↓
+   [Runtime Injection / Callback]
