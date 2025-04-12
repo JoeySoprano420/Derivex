@@ -1,0 +1,13 @@
+module core.memory
+
+function alloc(size:u32) -> ref
+    return system.mem.alloc(size)
+end
+
+function free(ptr:ref)
+    system.mem.dealloc(ptr)
+end
+
+function copy(dst:ref, src:ref, size:u32)
+    system.mem.copy(dst, src, size)
+end
