@@ -1,0 +1,1 @@
+macro LOG(x) => debug.print("[LOG] " + x)
