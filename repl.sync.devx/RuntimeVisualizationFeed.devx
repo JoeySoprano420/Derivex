@@ -1,0 +1,6 @@
+function show_live_trace(trace:StackTrace)
+    draw_rect(0, 0, 320, 240, color:0x000000) // Clear screen
+    for i, line in trace.lines
+        render.text(x:8, y:i*12, string:line)
+    end
+end
