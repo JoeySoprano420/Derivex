@@ -1,0 +1,14 @@
+import lexer
+import parser
+import analyzer
+import generator
+import linker
+
+function main(argv:table)
+    source := fs.read(argv[1])
+    tokens := lexer.tokenize(source)
+    ast := parser.build(tokens)
+    analyzed := analyzer.validate(ast)
+    ir := generator.transform(analyzed)
+    linker.link(ir)
+end
