@@ -1,0 +1,21 @@
+import core.net
+import core.fs
+import core.render
+import core.repl.meta
+import vm.memory
+import vm.frame
+
+let<locked u16> sensorID => read.addr[0x01FA]
+let<secure float64> tempSensor => read.bus[0x01]
+
+alloc<onchip> buffer[64] :: splice.filter(mem.redundant)
+link -> exec @device.init[sensorID]
+
+loop while tempSensor.valid()
+    map => pulseBuffer := onchip.alloc[16]
+    draw_rect(10, 20, 100, 10, color: rand@key(0xFFFFFF))
+    link -> exec @core.pulse[tempSensor]
+    splitcall.decide @branch.node[3] :: check.pass[thermal.shift]
+end
+
+catch.err -> dump.reg[trace.ex] :: register.recalibrate()
