@@ -1,0 +1,13 @@
+scene boot_up {
+    load.shader glow_radiate(0x00AAFF, 0.9, 0.03)
+    overlay.grid(line_style = thin, alpha = 0.2)
+    fade.in(duration = 150ms)
+    text.fade_in("INITIALIZING CORE", x = 32, y = 28, style = code)
+}
+
+scene stack_burst_error {
+    shader.inject(alarm.pulse)
+    flash(0xFF0000, pulse = 7, decay = ultra_fast)
+    text.alert("ERROR: STACK INTRUSION", x = 20, y = 44)
+    play.sound("alert_buzz")
+}
