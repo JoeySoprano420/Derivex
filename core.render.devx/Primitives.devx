@@ -1,0 +1,9 @@
+function draw_pixel(x:u16, y:u16, color:u32)
+    framebuffer[x][y] = color
+end
+
+function draw_rect(x:u16, y:u16, w:u16, h:u16, color:u32)
+    for i in 0..w
+        for j in 0..h
+            draw_pixel(x+i, y+j, color)
+end
