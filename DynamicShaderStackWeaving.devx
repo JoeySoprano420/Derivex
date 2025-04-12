@@ -1,0 +1,5 @@
+shader.stack([
+    glow_radiate(0xFF33AA),
+    pulse_core(heat=0.6),
+    motion_blur(scale=0.2)
+]) -> @gpu.composite_frame
