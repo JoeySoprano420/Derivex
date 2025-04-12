@@ -1,0 +1,6 @@
+script launch_sequence {
+    run scene boot_up
+    await kernel.init
+    on(error.stack) => run scene stack_burst_error
+    on(audio.beat) => shader.live(visualizer.react(fft))
+}
