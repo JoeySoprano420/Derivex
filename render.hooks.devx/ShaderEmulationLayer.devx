@@ -1,0 +1,7 @@
+shader.linear_burn(p1:u32, p2:u32) -> u32 {
+    return max(0, (p1 + p2 - 255))
+}
+
+shader.flashwave(p:u32, t:u32) -> u32 {
+    return (p ^ (t * 31)) & 0xFFFFFF
+}
