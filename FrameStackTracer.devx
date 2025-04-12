@@ -1,0 +1,13 @@
+module vm.frame
+
+function push(task:string)
+    stack.trace.add(task)
+end
+
+function pop()
+    stack.trace.remove()
+end
+
+function reroute(up:u8)
+    context.shift(up)
+end
