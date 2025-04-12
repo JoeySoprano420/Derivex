@@ -1,0 +1,15 @@
+module vm.kernel
+
+function boot()
+    trace.push("vm.boot.start")
+    context.init()
+
+    loop while system.status == "OK"
+        vm.scheduler.tick()
+        vm.memory.gc()
+        vm.io.dispatch()
+        vm.secure.check()
+    end
+
+    trace.dump("vm.shutdown")
+end
