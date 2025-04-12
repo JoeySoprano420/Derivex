@@ -1,0 +1,8 @@
+transition.fade_in(x:u16, y:u16, w:u16, h:u16, target_color:u32, duration:ms) {
+    steps := duration / 16
+    for i in 0..steps
+        ratio := i / steps
+        draw_rect(x, y, w, h, blend(canvas[x][y], target_color, ratio))
+        yield.frame()
+    end
+}
