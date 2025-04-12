@@ -1,0 +1,13 @@
+module core.sys
+
+function exit(code:u8)
+    syscall.shutdown(code)
+end
+
+function wait(ms:u32)
+    timer.delay(ms)
+end
+
+function ping() -> bool
+    return true
+end
