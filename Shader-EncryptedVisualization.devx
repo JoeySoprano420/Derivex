@@ -1,0 +1,1 @@
+secure.visual.render => encrypt.display(key = user.token)
