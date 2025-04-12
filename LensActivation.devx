@@ -1,0 +1,5 @@
+visual.lens(macro:LOG) -> render.overlay(
+    graph = true,
+    inject_paths = true,
+    live_params = true
+)
