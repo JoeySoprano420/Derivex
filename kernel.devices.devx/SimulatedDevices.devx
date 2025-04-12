@@ -1,0 +1,14 @@
+device_map := {
+    "core.pulse": 0x01,
+    "sensor.temp": 0x02,
+    "display.out": 0x03,
+    "input.ctrl": 0x04
+}
+
+function read_device(addr:u16) -> u32
+    return simulated_bus.get(addr)
+end
+
+function write_device(addr:u16, value:u32)
+    simulated_bus.set(addr, value)
+end
