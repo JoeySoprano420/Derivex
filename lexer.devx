@@ -1,0 +1,17 @@
+rules {
+    "let"     => T_LET
+    "map"     => T_MAP
+    "loop"    => T_LOOP
+    "if"      => T_IF
+    "then"    => T_THEN
+    "end"     => T_END
+    ":"       => T_COLON
+    "::"      => T_PIPE
+    "->"      => T_ARROW
+    "+", "-", "*", "/", "%" => T_OPERATOR
+    "=>"      => T_ASSIGN
+    "@", "[", "]", "." => T_SYMBOL
+    identifiers => T_IDENT
+    numbers => T_NUM
+    strings => T_STRING
+}
