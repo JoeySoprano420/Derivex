@@ -1,0 +1,17 @@
+module core.repl.meta
+
+function clear()
+    console.flush()
+end
+
+function trace_on()
+    trace.enable()
+end
+
+function trace_off()
+    trace.disable()
+end
+
+function context_dump() -> string
+    return context.serialize()
+end
