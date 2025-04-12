@@ -1,0 +1,7 @@
+rule statement {
+    let_stmt | map_stmt | loop_stmt | if_stmt | call_stmt
+}
+
+rule let_stmt {
+    "let" type ident "=>" expr
+}
