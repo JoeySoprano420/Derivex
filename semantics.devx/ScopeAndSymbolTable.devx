@@ -1,0 +1,20 @@
+struct Symbol {
+    name:string
+    type:Type
+    is_mutable:bool
+}
+
+struct Scope {
+    parent:Scope?
+    symbols:map<string, Symbol>
+}
+
+function resolve(name:string, scope:Scope) -> Symbol
+    if name in scope.symbols
+        return scope.symbols[name]
+    elif scope.parent != null
+        return resolve(name, scope.parent)
+    else
+        throw "UndefinedSymbol: " + name
+    end
+end
