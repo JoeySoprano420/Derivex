@@ -1,0 +1,1 @@
+debug.temporal.track(trace.error) => overlay.timeline.scrollback(8)
